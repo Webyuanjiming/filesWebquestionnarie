@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <title>聚金资本 - P2P理财P2P网贷投资理财聚金金融P2CN三板贷平台</title>
+    <meta name="Keywords" content="p2p理财三板贷聚金资本聚金金融p2p网贷聚金财富聚金华宝"/>
+    <meta name="Description" content="河南聚金金融深圳聚金华宝旗下，聚金资本 - P2P理财P2P网贷投资理财富聚金金融P2P理财新三板贷（新三板上市企业网贷）平台是中原第一的p2p理财网贷平台，是帮助用户p2p理财以实现聚金财富增值的网贷平台，是安全稳健持续可靠的p2p网贷投资理财平台。聚金华宝旗下聚金资本以其快速高效透明，持续安全稳健的经营特征赢得了良好的用户口碑和网贷平台排名。请记住聚金:河南聚金金融、深圳聚金华宝；记住聚金资本 - P2P理财P2P网贷投资理财富聚金金融P2P理财三板贷平台"/>
+    <link rel="shortcut icon" href="https://www.jujinziben.com/web/cn/favicon.ico">
+    <link rel="stylesheet" href="css/questionnaire.css" media="screen" type="text/css" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/checkbox.min.js"></script>
+    <script>
+        $(function(){
+            //选中单选按钮
+            $(".radiobox").selectRadio(
+
+            );
+            genData();
+            //获取数据
+            function genData(){
+                var phone = "13683815260";
+                $.ajax({
+                    url: "http://192.168.5.148:8888/api/userrisk/query",
+                    data: "phone="+phone,
+                    dataType:"json",
+                    success: function (data) {
+                        //是否成功
+                        if(data.status == true){
+                            //显示结果
+                            $(".wind").show();
+                            if(data.entity){
+                                var entity = data.entity;
+                                //选择各个值
+                                for(var i=1;i<12;i++){
+                                    var value = entity["item"+i];
+                                    $("input[name='item"+i+"'][value='"+value+"']").trigger("click");
+                                }
+                                //分数
+                                $("#totalScore").text(data.entity.totalScore);
+                                //级别
+                                $("#modelLevel").text("风险等级"+data.entity.modelLevel);
+                                //类型
+                                $("#modelMemo").text(data.entity.modelMemo);
+                            }
+                        }else{
+                            alert(data.msg);
+                        }
+                    }
+                });
+            }
+            /*--查看结果--*/
+            $("#qreResult").click(function(){
+                var model={};
+                for(var i=1;i<12;i++){
+                    var $item = $("input[name='item"+i+"']");
+                    var len=$item.length;
+                    var hasChecked = false;
+                    for(var j=0;j<len;j++){
+                        if($item[j].checked==true){
+                            hasChecked = true;
+                            var itName=$item[j].name;
+                            var itValue=$item[j].value;
+                            model[itName] = itValue;
+                            break;
+                        }
+                    }
+                    if(hasChecked == false){
+                        alert("您有未完成题目");
+                        return false;
+                    }
+                }
+                model.phoneNumber="13683815260";
+                model.userId="firetw";
+                model.token= null;
+                $.ajax({
+                    url: "http://192.168.5.148:8888/api/userrisk/add",
+                    type: "POST",
+                    contentType:"application/json;",
+                    data: JSON.stringify(model),
+                    dataType:"json",
+                    success: function (data) {
+                        console.log(data);
+                        //是否成功
+                        if(data.status == true){
+                            if(data.entity){
+                                //分数
+                                $("#totalScore").text(data.entity.totalScore);
+                                //级别
+                                $("#modelLevel").text("风险等级"+data.entity.modelLevel);
+                                //类型
+                                $("#modelMemo").text(data.entity.modelMemo);
+                            }
+                        }else{
+                            alert(data.msg);
+                        }
+                    }
+                });
+            });
+            /*--查看结果--*/
+            //重新测评
+            $("#reassess").click(function(){
+                $(window).scrollTop(0);
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- questionnaire -->
+        <div class="questionnaire">
+            <!---右侧栏目浮动--->
+            <div class="qre-slider">
+                <div class="slider-left">
+                    <p>
+                        <a href="#slider1" class="sli-u"></a>
+                    </p>
+                    <p>
+                        <a href="#slider2"></a>
+                    </p>
+                    <p>
+                        <a href="#slider3"></a>
+                    </p>
+                    <p>
+                        <a href="#slider4"></a>
+                    </p>
+                    <p>
+                        <a href="#slider5"></a>
+                    </p>
+                    <p>
+                        <a href="#slider6"></a>
+                    </p>
+                    <p>
+                        <a href="#slider7"></a>
+                    </p>
+                    <p>
+                        <a href="#slider8"></a>
+                    </p>
+                    <p>
+                        <a href="#slider9"></a>
+                    </p>
+                    <p>
+                        <a href="#slider10"></a>
+                    </p>
+                    <p>
+                        <a href="#slider11"></a>
+                    </p>
+                </div>
+                <div class="slider-right">
+                    <ul>
+                        <li class="sli-e" style="top:0;">
+                            <p class="sli-p">NO.1</p>
+                        </li>
+                        <li style="top:-3px;">
+                            <p>NO.2</p>
+                        </li>
+                        <li style="top:-6px;">
+                            <p>NO.3</p>
+                        </li>
+                        <li style="top:-8px;">
+                            <p>NO.4</p>
+                        </li>
+                        <li style="top:-10px;">
+                            <p>NO.5</p>
+                        </li>
+                        <li style="top:-12px;">
+                            <p>NO.6</p>
+                        </li>
+                        <li style="top:-14px;">
+                            <p>NO.7</p>
+                        </li>
+                        <li style="top:-16px;">
+                            <p>NO.8</p>
+                        </li>
+                        <li style="top:-18px;">
+                            <p>NO.9</p>
+                        </li>
+                        <li style="top:-20px;">
+                            <p>NO.10</p>
+                        </li>
+                        <li style="top:-22px;">
+                            <p>NO.11</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!---右侧栏目浮动--->
+            <!-- qre_logo头部 -->
+            <div class="qre_logo">
+                <div class="qre_logo_o">
+                    <img src="images/question@logo.png" width="100%" height="100%"/>
+                </div>
+                <div class="qre_logo_r">
+                    <a href="/mypage.page" class="qre_re">
+                        网站首页
+                    </a>
+                    <b>|</b>
+                    <a href="/regist.page" class="qre_ra">
+                        注册账号
+                    </a>
+                </div>
+            </div>
+            <!-- qre_logo头部 -->
+            <!-- qre_content头部 -->
+            <div class="qre_content">
+                <img src="images/question@t0.png" width="100%" height="100%"/>
+            </div>
+            <!-- qre_content头部 -->
+            <!-- qre_age -->
+            <div class="qre_age box" id="slider1">
+                <div class="qre_age_icon">
+                    1、您目前所处的年龄阶段
+                </div>
+                <div class="qre_age_cont">
+                    <div class="qre_cont-ore radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@person0.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item1" value="1">
+                                        </span>
+                                            18-28岁
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@person01.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item1" value="2">
+                                        </span>
+                                            28-35岁
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@person02.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item1" value="3">
+                                        </span>
+                                            36-45岁
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@person03.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item1" value="4">
+                                        </span>
+                                            46-55岁
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@person04.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item1" value="5">
+                                        </span>
+                                            56岁以上
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- qre_age -->
+            <!-- 投资经验 -->
+            <div class="qre_age box" id="slider2">
+                <div class="qre_suffer_icon">
+                    2、到目前为止，您已经有多少年投资经验
+                </div>
+                <div class="qre_age_cont">
+                    <div class="qre_cont-ore radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius0.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item2" value="1">
+                                        </span>
+                                            少于1年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius01.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item2" value="2">
+                                        </span>
+                                            1-3年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius02.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item2" value="3">
+                                        </span>
+                                            3-5年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius03.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item2" value="4">
+                                        </span>
+                                            6-10年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius04.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item2" value="5">
+                                        </span>
+                                            10年以上
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 投资经验 -->
+            <!-- 投资期限 -->
+            <div class="qre_age box" id="slider3">
+                <div class="qre_expires_icon">
+                    3、您预期的投资期限是
+                </div>
+                <div class="qre_age_cont">
+                    <div class="qre_cont-ore radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius0.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item3" value="1">
+                                        </span>
+                                            0-0.5年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius01.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item3" value="2">
+                                        </span>
+                                            0.5-1年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius02.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item3" value="3">
+                                        </span>
+                                            1年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius03.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item3" value="4">
+                                        </span>
+                                            1-3年
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_label-ic">
+                                    <img src="images/qn@radius04.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_label-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item3" value="5">
+                                        </span>
+                                            3年以上
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 投资期限 -->
+            <!-- 收入状况 -->
+            <div class="qre_age box" id="slider4">
+                <div class="qre_income_icon">
+                    4、您的家庭目前全年收入状况如何？
+                </div>
+                <div class="qre_age_cont">
+                    <div class="qre_cont-ore radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_income-ic">
+                                    <img src="images/qn@momey0.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_income-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item4" value="1">
+                                        </span>
+                                            5万元以下
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_income-ic">
+                                    <img src="images/qn@money02.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_income-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item4" value="2">
+                                        </span>
+                                            5-15万元
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_income-ic">
+                                    <img src="images/qn@money03.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_income-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item4" value="3">
+                                        </span>
+                                            15-30万元
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_income-ic">
+                                    <img src="images/qn@money04.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_income-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item4" value="4">
+                                        </span>
+                                            30-50万元
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_income-ic">
+                                    <img src="images/qn@money01.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_income-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item4" value="5">
+                                        </span>
+                                            50万元以上
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 收入状况 -->
+            <!-- 占比 -->
+            <div class="qre_age box" id="slider5">
+                <div class="qre_suffer_icon">
+                    5、一般情况下，在您的家庭年收入中，可用作投资或储蓄的占比？
+                </div>
+                <div class="qre_age_cont">
+                    <div class="qre_cont-ore radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_proportion-ic">
+                                    <img src="images/qn@radius10.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_proportion-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item5" value="1">
+                                        </span>
+                                            0%—10%
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_proportion-ic">
+                                    <img src="images/qn@radius11.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_proportion-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item5" value="2">
+                                        </span>
+                                            10%—25%
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_proportion-ic">
+                                    <img src="images/qn@radius12.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_proportion-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item5" value="3">
+                                        </span>
+                                            25%—35%
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_proportion-ic">
+                                    <img src="images/qn@radius13.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_proportion-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item5" value="4">
+                                        </span>
+                                            35%—50%
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_proportion-ic">
+                                    <img src="images/qn@radius14.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="qre_proportion-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item5" value="5">
+                                        </span>
+                                            50%以上
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 占比 -->
+            <!-- 主要目的 purpose-->
+            <div class="qre_age box" id="slider6">
+                <div class="qre_income_icon">
+                    6、您投资的主要目的是什么？请在以下答案中选择最符合您的一个描述
+                </div>
+                <div class="qre_purpose_cont">
+                    <div class="qre_purpose-ore radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_purpose-ic">
+                                    <img src="images/qn@one0.png" width="100%" height="100%">
+                                </div>
+                                <div class="qre_purpose-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item6" value="1">
+                                        </span>
+                                            赚个生活费维持日常生活开支
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_purpose-ic">
+                                    <img src="images/qn@one01.png" width="100%" height="100%">
+                                </div>
+                                <div class="qre_purpo-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                        <input type="radio" name="item6" value="2">
+                                    </span>
+                                        闲钱理财
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_purpose-ic">
+                                    <img src="images/qn@one02.png" width="100%" height="100%">
+                                </div>
+                                <div class="qre_purpose-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item6" value="3">
+                                        </span>
+                                            暂时闲置资金博取较高的风险收益
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_purpose-ic">
+                                    <img src="images/qn@one03.png" width="100%" height="100%">
+                                </div>
+                                <div class="qre_purpo-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item6" value="4">
+                                        </span>
+                                            赚钱提升生活品质
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 主要目的 -->
+            <!-- 未来1年的态度 -->
+            <div class="qre_age box" id="slider7">
+                <div class="qre_age_icon">
+                    7、以下哪项描述最符合您对某项投资在未来1年内表现所持的态度？
+                </div>
+                <div class="qre_manner_cont">
+                    <div class="qre_manner-ore">
+                        <div class="qre_manner_img">
+                            <img src="images/qn@one04.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                    <div class="qre_manner-rgt radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item7" value="1">
+                                        </span>
+                                            如果发生亏损，我并不在乎
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item7" value="2">
+                                        </span>
+                                            我能承受25%以内的亏损
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item7" value="3">
+                                        </span>
+                                            我只能承受10%以内的亏损
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item7" value="4">
+                                        </span>
+                                            我几乎不能承受任何亏损
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item7" value="5">
+                                        </span>
+                                            我需要至少获得高于一年定期存款利率的收益
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 未来1年的态度 -->
+            <!-- 问答 -->
+            <div class="qre_age box" id="slider8">
+                <div class="qre_answer_icon">
+                    <p style="margin-top: 15px;">8、目前有一个200万元的投资项目，但有50%的可能盈利100万元，</p>
+                    <p>同样也有50%的可能损失50万元。您会进行这个投资吗？</p>
+                </div>
+                <div class="qre_manner_cont">
+                    <div class="qre_manner-ore">
+                        <div class="qre_answer_img">
+                            <img src="images/qn@one05.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                    <div class="qre_manner-rgt radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item8" value="1">
+                                        </span>
+                                            当然会
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item8" value="2">
+                                        </span>
+                                            可能会
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item8" value="3">
+                                        </span>
+                                            也许吧
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item8" value="4">
+                                        </span>
+                                            可能不
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item8" value="5">
+                                        </span>
+                                            无所谓
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 问答 -->
+            <!-- 低投资风险 -->
+            <div class="qre_age box" id="slider9">
+                <div class="qre_low_icon">
+                    <p style="margin-top: 15px;">9、如果您拥有￥500,000用以建立您的投资组合，</p>
+                    <p>您认为下面哪个投资组合最具吸引力？</p>
+                </div>
+                <div class="qre_low_cont">
+                    <div class="qre_low">
+                        <ul>
+                            <li>
+                                <div class="qre_low_bo0">
+                                    <p style="padding-top:8px;">低风险投资</p>
+                                    <p>如：固定收益类产品</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_low_bo01">
+                                    <p style="padding-top:8px;">一般风险投资</p>
+                                    <p>如：固定收益类产品</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_low_bo02">
+                                    <p style="padding-top:8px;">较高和高风险投资</p>
+                                    <p>如：本息不保障</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="qre_low-ore">
+                        <div class="qre_low_img">
+                            <img src="images/qn@one06.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                    <div class="qre_low-rgt radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_low-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item9" value="1">
+                                        </span>
+                                            低风险投资、一般风险投资、高风险投资的比重分别为：5：15：80
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_low-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item9" value="2">
+                                        </span>
+                                            低风险投资、一般风险投资、高风险投资的比重分别为：10：30：60
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_low-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item9" value="3">
+                                        </span>
+                                            低风险投资、一般风险投资、高风险投资的比重分别为：30：40：30
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_low-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item9" value="4">
+                                        </span>
+                                            低风险投资、一般风险投资、高风险投资的比重分别为：60：30：10
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_low-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item9" value="5">
+                                        </span>
+                                            低风险投资、一般风险投资、高风险投资的比重分别为：80：15：5
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 低投资风险 -->
+            <!-- 投资经验 -->
+            <div class="qre_age box" id="slider10">
+                <div class="qre_age_icon">
+                    <p>10、根据您以往投资的经验，当有相当部分资金被分配到风险较高的其他投资项目时，您通常：</p>
+                </div>
+                <div class="qre_manner_cont">
+                    <div class="qre_manner-ore">
+                        <div class="qre_answer_img">
+                            <img src="images/qn@one07.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                    <div class="qre_manner-rgt radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item10" value="1">
+                                        </span>
+                                            比较放心，很少关注
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item10" value="2">
+                                        </span>
+                                            关注，但不焦虑
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item10" value="3">
+                                        </span>
+                                            比较关注，有点焦虑
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item10" value="4">
+                                        </span>
+                                            非常关注，比较焦虑
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item10" value="5">
+                                        </span>
+                                            极度关注，非常焦虑
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 投资经验 -->
+            <!-- 投资品种 -->
+            <div class="qre_age box" id="slider11">
+                <div class="qre_suffer_icon">
+                    11、假设现有以下几个投资品种，您必须并且只能选择其中的一个进行投资，那您会选择哪一个？
+                </div>
+                <div class="qre_manner_cont">
+                    <div class="qre_invest-ore">
+                        <div class="qre_invest_img">
+                            <img src="images/qn@one08.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                    <div class="qre_invest-rgt radiobox">
+                        <ul>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item11" value="1">
+                                        </span>
+                                            年化收益率可能在30%以上，同时本金也有可能亏损30%以上
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item11" value="2">
+                                        </span>
+                                            年化收益率可能在20%以内，同时本金也有可能亏损20%以内
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item11" value="3">
+                                        </span>
+                                            年化收益率可能在10%以内，同时本金也有可能亏损10%以内
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item11" value="4">
+                                        </span>
+                                            本金保证，年化收益率在0-8%之间
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="qre_manner-cont">
+                                    <p>
+                                        <span class="radio_span">
+                                            <input type="radio" name="item11" value="5">
+                                        </span>
+                                            固定年化收益率为4%的产品
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 投资品种 -->
+            <!--- 查询结果 -->
+            <div class="qre-btn-al">
+                <div class="qre-btn-o">
+                    <div class="qre-btn" id="qreResult">
+                        查看结果
+                    </div>
+                </div>
+            </div>
+            <!--- 查询结果 -->
+        </div>
+    <!-- questionnaire -->
+    <!-- 风测评分 -->
+        <div class="wind" style="display:none;">
+            <p class="win-p">您的风险测评得分为：</p>
+            <div class="wid-ground">
+                <div class="wid-gro0">
+                    <p class="gro_p1"><b id="totalScore"></b>分</p>
+                    <p class="gro_p2" id="modelMemo"></p>
+                    <p class="gro_p3" id="modelLevel"></p>
+                </div>
+                <div class="wid-gro01">
+                    <div class="wic-left-btn" id="reassess">
+                        重新测评
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- 风测评分 -->
+    <script>
+        /*<![CDATA[*/
+
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?8f1a760c5bc7050f6dafbb0e9bb78d2d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+        /*]]>*/
+    </script>
+    <script type="text/javascript">
+        var tmpArray = new Array();
+        $(window).scroll(function () {
+            var scroll_len = $(window).scrollTop();
+            var wTop = $(window).scrollTop();
+
+            if (wTop) {
+                var sections = $(".box");
+                for (var i = 0, len = sections.length; i < len; i++) {
+                    var top = sections.eq(i).offset().top;
+                    tmpArray[i] = Math.abs(wTop - top);
+                }
+                var tmpValue = Math.min.apply(null, tmpArray)
+                var index = 0;
+                if (typeof tmpArray.indexOf == "function") {
+                    index = tmpArray.indexOf(tmpValue);
+                } else {
+                    for (var j = 0, len = tmpArray.length; j < len; j++) {
+                        if (tmpArray[j] == tmpValue) {
+                            index = j;
+                            break;
+                        }
+                    }
+                }
+                $(".slider-left p a").removeClass("sli-u");
+                $(".slider-right ul li").removeClass("sli-e");
+                $(".slider-right ul li p").removeClass("sli-p");
+                $(".slider-left p a").eq(index).addClass("sli-u");
+                $(".slider-right ul li").eq(index).addClass("sli-e");
+                $(".slider-right ul li p").eq(index).addClass("sli-p");
+            }
+        });
+    </script>
+</body>
+</html>

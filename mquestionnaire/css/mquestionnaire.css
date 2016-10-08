@@ -1,0 +1,448 @@
+/*************
+**author:Webyuanjiming**
+**@ Create by w8 0n 2016/09/23**
+**page:questionnaire**
+**************/
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,body{max-width: 640px;min-width: 320px;height: 100%;margin:0 auto;}
+.mquestionnaire{max-width: 640px;min-width: 320px;height: 100%;margin:0 auto;overflow: hidden;}
+.maire{
+    width: 100%;
+    height: 100%;
+    float: left;
+    background: url("../images/back@open0.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: #FF5B5B;
+}
+.bore{
+    width:80%;
+    height:42%;
+    background: url("../images/bo@0.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    top:12%;
+}
+.bore-text{
+    width: 100%;
+    float: left;
+    height: 45px;
+    margin-top: 30%;
+}
+.bore-text p{
+    width: 100%;
+    font-family: "黑体";
+    font-size:0.8em;
+    line-height: 2.0em;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto;
+}
+.bore-btn100{
+    width: 100%;
+    float: left;
+}
+.bore-btn{
+    width: 55%;
+    height:3.0em;
+    background-color: #FFFFFF;
+    margin: 20% auto;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-family: "黑体";
+    color: #ec4444;
+    font-size: 1.0em;
+    line-height: 3.0em;
+    text-align: center;
+}
+
+/*==mairy==*/
+.mairy{
+    width: 100%;
+    height: 100%;
+    float: left;
+    background-color: #FFFFFF;
+}
+.mair-a{
+    font-family: "黑体";
+    color: #1a1a1a;
+    font-size: 1.0em;
+    line-height: 1.2em;
+    text-indent: 8px;
+    margin: 0 0.5em;
+}
+.mair-ul{
+    width: 100%;
+    height: 80%;
+    float: left;
+}
+.mair-ul ul{
+    width: 90%;
+    margin: 0 auto;
+}
+.mair-ul ul li{
+    float: left;
+    list-style: none;
+    width: 50%;
+    margin: 5px auto;
+}
+.mair-a0{
+    width:80%;
+    height:80%;
+    margin: 0 auto;
+}
+.mair-a1{
+    width: 100%;
+    height: 20px;
+    float: left;
+}
+.mair-a1 p{
+    text-indent: 10px;
+}
+.radio_span{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background: url("../images/radio.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left:20%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.radio_checked{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background: url("../images/check.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left:20%;
+}
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0.5px;
+    top: 0.5px;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.mair-ul ul.mair-last{
+    width: 90%;
+    margin: 0 auto;
+}
+.mair-ul ul.mair-last li{
+    float: left;
+    width: 100%;
+    list-style: none;
+}
+.mair-a2{
+    width:40%;
+    height:40%;
+    margin: 0 auto;
+}
+.mair-a3{
+    width: 100%;
+    height: 20px;
+    float: left;
+}
+.mair-ap{
+    width: 45%;
+    margin: 0 auto;
+    text-indent: 10px;
+}
+
+.mra-po{
+    color: #ff5b5b;
+    font-family: "黑体";
+    font-size: 1.2em;
+    line-height:1.5em;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+.mra-btn0{
+    width: 100%;
+    float: left;
+}
+.mra-btn{
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #FF5B5B;
+    width: 45%;
+    height: 45px;
+    margin: 0 auto;
+    color: #ff5b5b;
+    font-family: "黑体";
+    font-size: 1.2em;
+    line-height:45px;
+    text-align: center;
+}
+
+/*==two==*/
+.mr-btn0{
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #FF5B5B;
+    width: 45%;
+    height: 45px;
+    float: left;
+    color: #ff5b5b;
+    font-family: "黑体";
+    font-size: 1.2em;
+    line-height:45px;
+    text-align: center;
+}
+.mr-btn01{
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #FF5B5B;
+    width: 45%;
+    height: 45px;
+    float:right;
+    color: #ff5b5b;
+    font-family: "黑体";
+    font-size: 1.2em;
+    line-height:45px;
+    text-align: center;
+}
+.mrt-btn{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*-four-*/
+.mair-ap0{
+    width: 70%;
+    margin: 0 auto;
+    text-indent: 10px;
+}
+
+/*--six--*/
+.mair-ul0 ul {
+    width: 90%;
+    margin: 0 auto;
+    height: 45%;
+}
+.mair-ul0{
+    width: 100%;
+    height: 72%;
+    float: left;
+    margin-top: 5%;
+}
+
+.mair-ul0 ul li{
+    float: left;
+    list-style: none;
+    width: 50%;
+    margin: 5% auto;
+}
+
+.mair-a4{
+    width: 90%;
+    height: 35px;
+    float: left;
+    margin-top: 5%;
+}
+.mair-a4 p{
+    font-family: "黑体";
+    font-size:0.85em;
+    line-height: 1.2em;
+    text-indent: 5px;
+}
+.mair-a4 p abbr{
+    float: left;
+    width: 58%;
+}
+
+.mair-att{
+    font-family: "黑体";
+    color: #1a1a1a;
+    font-size: 1.0em;
+    line-height: 1.2em;
+    text-indent: 8px;
+    margin: 1.0em 0.5em 0 0.5em;
+}
+
+/*--7--*/
+.mair-img0{
+    width: 100%;
+    float: left;
+}
+.mair-amg{
+    width: 80%;
+    height: 45%;
+    margin:20px auto;
+}
+.mair-img-li{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mair-img-li p{
+    width: 100%;
+    float: left;
+    font-family: "黑体";
+    font-size:0.85em;
+    line-height: 1.2em;
+    text-indent: 5px;
+    height: 30px;
+}
+.mair-img-li p abbr{
+    float: left;
+    width:80%;
+    margin-top: 2px;
+}
+
+/*=nine=*/
+.mair-amg0{
+    width:90%;
+    height: 45%;
+    margin:20px auto;
+}
+.mair-img-li0{
+    width: 90%;
+    margin: 0 auto;
+}
+.mair-img-li0 p{
+    width: 100%;
+    float: left;
+    font-family: "黑体";
+    font-size:0.85em;
+    line-height: 1.2em;
+    text-indent: 5px;
+    height: 30px;
+    margin-top: 28px;
+}
+.mair-img-li0 p abbr{
+    float: left;
+    width:80%;
+}
+
+/*=eleven=*/
+.mair-img-li1{
+    width:95%;
+    margin: 0 auto;
+}
+.mair-img-li1 p{
+    width: 100%;
+    float: left;
+    font-family: "黑体";
+    font-size:0.85em;
+    line-height: 1.2em;
+    text-indent: 5px;
+    height: 36px;
+}
+.mair-img-li1 p abbr{
+    float: left;
+    width:90%;
+    margin-top: 2px;
+}
+
+/*=twelve=*/
+
+.numb{
+    font-family: "黑体";
+    font-size:1.0em;
+    line-height: 1.2em;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 18%;
+}
+.numb-bore{
+    width: 80%;
+    height: 45%;
+    background: url("../images/numb.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    top:5%;
+}
+
+.numb-text{
+    color: #a62cd4;
+    font-family: "黑体";
+    font-size:1.5em;
+    line-height: 3.0em;
+    height: 3.0em;
+    text-align: center;
+    width: 100%;
+    float: left;
+    margin-top: 25%;
+}
+.numb-text b{
+    font-weight: normal;
+    font-size:3.5em;
+}
+
+.numb-text0{
+    color: #ff5b5b;
+    font-family: "黑体";
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+.bore-text0{
+    width: 100%;
+    float: left;
+    height: 45px;
+    margin-top: 13%;
+}
+.bore-text0 p {
+    width: 100%;
+    font-family: "黑体";
+    font-size:1.0em;
+    line-height: 2.0em;
+    text-align: center;
+    color: #fffc00;
+    margin: 0 auto;
+}
+
+/*=end=*/
+.numb-btn0{
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background-color: #FFFFFF;
+    width: 45%;
+    height: 45px;
+    margin: 0 auto;
+    color: #ff5b5b;
+    font-family: "黑体";
+    font-size:0.85em;
+    line-height: 45px;
+    text-align: center;
+}
+.nb-mir{
+    width: 100%;
+    float: left;
+}
+.numb-btn{
+    width: 90%;
+    margin: 7% auto 0 auto;
+}

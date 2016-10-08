@@ -1,0 +1,577 @@
+/*************
+**author:Webyuanjiming**
+**@ Create by w8 0n 2016/09/23**
+**page:questionnaire**
+**************/
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-family: '微软雅黑';
+    background-color: #FFFFFF;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/** =======================
+ * questionnaire
+ ===========================*/
+.questionnaire{width: 100%;float: left;height: auto;}
+
+.qre_logo{width: 1000px;height: 90px;margin: 0 auto;}
+.qre_logo_o{width: 187px;height: 62px;float: left;margin-top: 14px;}
+
+.qre_logo_r{width: 160px;height: 90px;float: right;}
+.qre_logo_r b{color: #666666;font-family: "微软雅黑";font-size: 16px;position: relative;top: -1px;}
+.qre_logo_r a.qre_ra{float: right;}
+.qre_logo_r a.qre_re{padding: 0 6px;}
+.qre_logo_r a{color: #666666;font-family: "微软雅黑";font-size: 16px;line-height: 90px;text-decoration: none;}
+
+/**================
+*qre_content
+=====================*/
+.qre_content{width: 1000px;height: 400px;margin:0 auto 40px auto;}
+
+
+/**================
+*qre_age
+=====================*/
+.qre_age{width: 1000px;height:430px;margin:0 auto;}
+.qre_age_icon{width: 1000px;height: 117px;float: left;background: url("../images/qn@icon0.png"); background-size: 100% 100%; background-repeat: no-repeat;
+    font-family: "微软雅黑";font-size: 18px;line-height: 100px;color: #ffffff;text-align: center;
+}
+.qre_age_cont{width: 1000px;height: 310px;float: left;}
+
+.qre_cont-ore{
+    width: 880px;
+    height: 200px;
+    margin:30px auto;
+}
+
+.qre_label-ic{width: 120px;height: 120px;float: left;margin-left: 30px;}
+.qre_label-cont{width: 120px;height:20px;float: left;margin-left:20px;text-align: center;margin-top: 10px;}
+.qre_cont-ore ul li{
+    float: left;
+    list-style: none;
+    width:20%;
+    margin-top: 15px;
+}
+.radio_span {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background: url("../images/radius@b.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left:27px;
+    position: relative;
+    top:0;
+    left: 0;
+}
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0.5px;
+    top: 0.5px;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+.radio_checked{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background: url("../images/radius@bt.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left:27px;
+}
+
+/*===qre_suffer_icon===*/
+.qre_suffer_icon{
+    width: 1000px;height: 117px;float: left;background: url("../images/qn@icon01.png"); background-size: 100% 100%; background-repeat: no-repeat;
+    font-family: "微软雅黑";font-size: 18px;line-height: 100px;color: #ffffff;text-align: center;
+}
+/*===qre_suffer_icon===*/
+.qre_expires_icon{
+    width: 1000px;height: 117px;float: left;background: url("../images/qn@icon03.png"); background-size: 100% 100%; background-repeat: no-repeat;
+    font-family: "微软雅黑";font-size: 18px;line-height: 100px;color: #ffffff;text-align: center;
+}
+
+/*====qre_income_icon===*/
+.qre_income_icon{
+    width: 1000px;height: 117px;float: left;background: url("../images/qn@icon02.png"); background-size: 100% 100%; background-repeat: no-repeat;
+    font-family: "微软雅黑";font-size: 18px;line-height: 100px;color: #ffffff;text-align: center;
+}
+
+.qre_income-ic{
+    width: 150px;
+    height: 120px;
+    float: left;
+    margin-left: 30px;
+}
+
+.qre_income-cont{
+    width: 150px;
+    height: 20px;
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*=========proportion=====*/
+
+.qre_proportion-ic{
+    width:124px;
+    height:124px;
+    float: left;
+    margin-left: 30px;
+}
+
+.qre_proportion-cont{
+    width:150px;
+    height:20px;
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*****======purpose主要目的========*/
+.qre_purpose_cont{
+    width: 1000px;
+    height: 480px;
+    float: left;
+}
+.qre_purpose-ore{
+    width: 900px;
+    height: 450px;
+    margin:20px auto 0 auto;
+}
+
+.qre_purpose-ic{
+    width: 160px;
+    height: 160px;
+    float: left;
+}
+.qre_purpose-cont{
+    width: 300px;
+    height:20px;
+    float: left;
+    text-indent: 10px;
+    margin-top: 70px;
+}
+.qre_purpose-ore ul li:nth-child(1),.qre_purpose-ore ul li:nth-child(3){
+    float:left;
+    list-style: none;
+    width:55%;
+    margin: 30px auto 0 auto;
+}
+.qre_purpose-ore ul li:nth-child(2),.qre_purpose-ore ul li:nth-child(4){
+    float:left;
+    list-style: none;
+    width:45%;
+    margin: 30px auto 0 auto;
+}
+
+.qre_purpo-cont{
+    width: 220px;
+    height:20px;
+    float: left;
+    text-indent: 10px;
+    margin-top: 70px;
+}
+
+/*****=======qre_manner_cont未来一年坚持的态度=========****/
+
+.qre_manner_cont{
+    width: 1000px;
+    height: 390px;
+    float: left;
+}
+.qre_manner-ore{
+    width: 530px;
+    height: 390px;
+    float: left;
+}
+.qre_manner-rgt{
+    width: 470px;
+    height: 390px;
+    float: right;
+}
+
+.qre_manner_img{
+    width: 290px;
+    height: 240px;
+    margin: 70px 70px 0 125px;
+}
+
+.qre_manner-cont{
+    width:100%;
+    height:20px;
+    float: left;
+    text-indent: 10px;
+}
+.qre_manner-rgt ul{
+    margin-top: 20px;
+}
+.qre_manner-rgt ul li{
+    float: left;
+    list-style: none;
+    width: 100%;
+    margin: 40px auto 0 auto;
+}
+
+/****======问答=======*****/
+.qre_answer_icon {
+    width: 1000px;
+    height: 117px;
+    float: left;
+    background: url("../images/qn@icon01.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.qre_answer_icon p{
+    font-family: "微软雅黑";
+    font-size: 18px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+}
+
+.qre_answer_img{
+    width: 320px;
+    height: 260px;
+    margin: 70px 70px 0 85px;
+}
+
+/***====qre_low_icon低投资风险======***/
+
+.qre_low_icon{
+    width: 1000px;
+    height: 117px;
+    float: left;
+    background:url("../images/qn@icon02.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.qre_low_icon p{
+    font-family: "微软雅黑";
+    font-size: 18px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+}
+
+.qre_low{
+    width: 860px;
+    height: 100px;
+    margin: 10px auto;
+}
+.qre_low ul li{
+    float: left;
+    list-style: none;
+    margin: 22px 11px 0 11px;
+}
+.qre_low_bo0{
+    width: 260px;
+    height: 60px;
+    background-color: #8FC075;
+}
+.qre_low_bo01{
+    width: 260px;
+    height: 60px;
+    background-color: #F5BE53;
+}
+.qre_low_bo02{
+    width: 260px;
+    height: 60px;
+    background-color: #EC5E5E;
+}
+.qre_low_bo0 p,.qre_low_bo01 p,.qre_low_bo02 p{
+    color: #ffffff;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.qre_low_cont{
+    width: 1000px;
+    height: 520px;
+    float: left;
+}
+.qre_low-ore{
+    width: 400px;
+    height: 300px;
+    float: left;
+}
+.qre_low_img{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.qre_low-rgt{
+    width: 600px;
+    height: 300px;
+    float: right;
+}
+.qre_low-rgt ul li{
+    float: left;
+    list-style: none;
+    width: 100%;
+    margin: 5px auto 43px auto;
+}
+.qre_low-cont {
+    width: 100%;
+    height: 20px;
+    float: left;
+    text-indent: 10px;
+    margin-left: -10px;
+}
+
+/*投资品种qre_invest-ore*/
+.qre_invest-ore{
+    width: 400px;
+    height: 390px;
+    float: left;
+}
+
+.qre_invest_img{
+    width: 350px;
+    height: 260px;
+    margin: 70px 0px 0px 50px;
+}
+
+.qre_invest-rgt{
+    width: 600px;
+    height: 390px;
+    float: right;
+}
+.qre_invest-rgt ul{
+    margin-top: 35px;
+}
+.qre_invest-rgt ul li{
+    float: left;
+    list-style: none;
+    width: 100%;
+    margin: 5px auto 43px auto;
+}
+
+/*-qre-btn-*/
+.qre-btn-al{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: 65px;
+}
+.qre-btn-o{
+    width: 1000px;
+    height: 80px;
+    margin: 0 auto;
+}
+.qre-btn{
+    width: 280px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #EC5E5E;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 60px;
+    font-family: "微软雅黑";
+    text-align: center;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    cursor: pointer;
+}
+
+.qre_label-cont p,.qre_income-cont p,.qre_proportion-cont p,.qre_purpose-cont p,.qre_purpo-cont p,.qre_manner-cont p,.qre_low-cont p{
+    cursor: pointer;
+}
+
+/*--wind封测评分--*/
+.wind{
+    width: 100%;
+    height:1080px;
+    background-color: #FF5B5B;
+    float: left;
+}
+.wid-ground{
+    width: 100%;
+    height: 583px;
+    background: url("../images/wind@0.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 80px;
+    float: left;
+}
+
+.wid-gro0{
+    width: 345px;
+    height: 345px;
+    background: url("../images/wind@01.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin:0 auto;
+}
+
+.gro_p1{
+    color: #a62cd4;
+    font-family: "微软雅黑";
+    text-align: center;
+    font-size: 48px;
+    line-height:50px;
+    position: relative;
+    top: 120px;
+}
+.gro_p1 b{
+    color: #a62cd4;
+    font-family: "微软雅黑";
+    text-align: center;
+    font-size: 90px;
+    font-weight: normal;
+}
+
+.gro_p2{
+    color: #a62cd4;
+    font-family: "微软雅黑";
+    text-align: center;
+    font-size: 28px;
+    line-height: 30px;
+    position: relative;
+    top:135px;
+}
+
+.gro_p3{
+    color: #ffffff;
+    font-family: "微软雅黑";
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+    position: relative;
+    top: 172px;
+}
+
+.wid-gro01{
+    width:420px;
+    height:42px;
+    margin:60px auto;
+}
+
+.wic-left-btn{
+    width: 162px;
+    height: 42px;
+    margin: 0 auto;
+    background-color: #FFEA00;
+    color: #ec4444;
+    font-size: 16px;
+    line-height: 42px;
+    font-family: "微软雅黑";
+    text-align: center;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    cursor: pointer;
+}
+.win-p{
+    color: #FFFFFF;
+    font-size: 30px;
+    line-height: 32px;
+    font-family: "微软雅黑";
+    text-align: center;
+    width: 100%;
+    float: left;
+    margin-top: 200px;
+}
+
+/*===*/
+.qre-slider{
+    width: 80px;
+    height: 480px;
+    position: fixed;
+    top: 40%;
+    right: 14%;
+}
+.slider-left{
+    width: 4px;
+    height:480px;
+    float: left;
+    background-color: #DEDEDE;
+}
+.slider-left p{
+    float: left;
+    margin: 15px 0;
+}
+.slider-left p a.sli-u{
+    width: 12px;
+    height: 12px;
+    background: url("../images/w@icon0.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position:relative;
+    top: 10px;
+    left: -4px;
+    display: block;
+}
+.slider-left p a{
+    width: 12px;
+    height: 12px;
+    background: url("../images/w@icon01.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position:relative;
+    top: 10px;
+    left: -4px;
+    display: block;
+}
+
+.slider-right{
+    width: 68px;
+    height:480px;
+    float: right;
+}
+.slider-right ul li{
+    float: left;
+    list-style: none;
+    width: 100%;
+    height: 24px;
+    margin: 20px 0 0 0;
+    display: block;
+}
+a{text-decoration: none;outline: none;}
+
+.sli-e{
+    width:61px;
+    height: 24px;
+    background: url("../images/w@icon.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position:relative;
+    left: -4px;
+}
+.slider-right ul li p.sli-p{
+    display: block;
+}
+.slider-right ul li p{
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height:24px;
+    font-family: "微软雅黑";
+    text-align: center;
+    text-indent: 6px;
+    display: none;
+}
